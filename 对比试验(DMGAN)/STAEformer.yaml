@@ -1,0 +1,230 @@
+METRLA:
+  num_nodes: 207
+  in_steps: 12
+  out_steps: 12
+
+  train_size: 0.7
+  val_size: 0.1
+
+  time_of_day: True
+  day_of_week: True
+
+  lr: 0.001
+  weight_decay: 0.0003
+  milestones: [20,30]
+  lr_decay_rate: 0.1
+  batch_size: 16
+  max_epochs: 200
+  early_stop: 30
+  use_cl: False
+  cl_step_size: 2500
+  #clip_grad: 5
+
+  model:
+    cl_decay_steps: 2000
+    filter_type: dual_random_walk
+    horizon: 12
+    input_dim: 1
+    l1_decay: 0
+    max_diffusion_step: 1
+    num_nodes: 207
+    num_rnn_layers: 1
+    output_dim: 1
+    rnn_units: 128
+    seq_len: 12
+    use_curriculum_learning: true
+    d_ff: 1024
+    d_k: 64
+    d_v: 64
+    n_layers: 2
+    n_heads: 4
+    tgt_output_dim: 1
+    local_dim: 3
+    alpha: 0.15
+    embedding_dim: 32
+    local_att_seq_len: 3
+    enable_linear: True
+    k_hop: 3
+
+PEMSBAY:
+  num_nodes: 325
+  in_steps: 12
+  out_steps: 12
+
+  train_size: 0.7
+  val_size: 0.1
+
+  time_of_day: True
+  day_of_week: True
+
+  lr: 0.001
+  weight_decay: 0.0001
+  milestones: [10, 30]
+  lr_decay_rate: 0.1
+  batch_size: 64
+  max_epochs: 200
+  early_stop: 20
+  use_cl: False
+
+  model:
+    cl_decay_steps: 2000
+    filter_type: dual_random_walk
+    horizon: 12
+    input_dim: 1
+    l1_decay: 0
+    max_diffusion_step: 1
+    num_nodes: 325
+    num_rnn_layers: 2
+    output_dim: 1
+    rnn_units: 128
+    seq_len: 12
+    use_curriculum_learning: true
+    d_ff: 2048
+    d_k: 64
+    d_v: 64
+    n_layers: 1
+    n_heads: 4
+    tgt_output_dim: 1
+    local_dim: 3
+    alpha: 0.1
+    embedding_dim: 32
+    local_att_seq_len: 3
+    enable_linear: False
+    k_hop: 3
+
+PEMS04:
+  num_nodes: 307
+  in_steps: 12
+  out_steps: 12
+
+  train_size: 0.6
+  val_size: 0.2
+
+  time_of_day: True
+  day_of_week: True
+
+  lr: 0.001
+  weight_decay: 0.0005
+  milestones: [15, 30, 50]
+  lr_decay_rate: 0.1
+  batch_size: 16
+  max_epochs: 300
+  early_stop: 20
+  use_cl: False
+  cl_step_size: 2500
+
+  model_args:
+    num_nodes: 307
+    in_steps: 12
+    out_steps: 12
+    steps_per_day: 288
+    input_dim: 3
+    output_dim: 1
+    model_dim: 96
+    feed_forward_dim: 128
+    num_heads: 4
+    num_layers: 3
+    dropout: 0.1
+
+PEMS07:
+  num_nodes: 883
+  in_steps: 12
+  out_steps: 12
+
+  train_size: 0.6
+  val_size: 0.2
+
+  time_of_day: True
+  day_of_week: True
+
+  lr: 0.001
+  weight_decay: 0.001
+  milestones: [15, 35, 50]
+  lr_decay_rate: 0.1
+  batch_size: 16
+  max_epochs: 300
+  early_stop: 20
+  use_cl: False
+  cl_step_size: 2500
+
+  model_args:
+    num_nodes: 883
+    in_steps: 12
+    out_steps: 12
+    steps_per_day: 288
+    input_dim: 3
+    output_dim: 1
+    model_dim: 64
+    feed_forward_dim: 128
+    num_heads: 4
+    num_layers: 3
+    dropout: 0.1
+
+PEMS08:
+  num_nodes: 170
+  in_steps: 12
+  out_steps: 12
+
+  train_size: 0.6
+  val_size: 0.2
+
+  time_of_day: True
+  day_of_week: True
+
+  lr: 0.001
+  weight_decay: 0.0015
+  milestones: [25, 45, 65]
+  lr_decay_rate: 0.1
+  batch_size: 16
+  max_epochs: 300
+  early_stop: 30
+  use_cl: False
+  cl_step_size: 2500
+
+  model_args:
+    num_nodes: 170
+    in_steps: 12
+    out_steps: 12
+    steps_per_day: 288
+    input_dim: 3
+    output_dim: 1
+    model_dim: 56
+    feed_forward_dim: 128
+    num_heads: 4
+    num_layers: 3
+    dropout: 0.1
+
+# This is abandoned, needs further tuning if you want to run
+PEMS03:
+  num_nodes: 358
+  in_steps: 12
+  out_steps: 12
+
+  train_size: 0.6
+  val_size: 0.2
+
+  time_of_day: True
+  day_of_week: True
+  
+  lr: 0.001
+  weight_decay: 0.0005
+  milestones: [15, 30, 40]
+  lr_decay_rate: 0.1
+  batch_size: 16
+  max_epochs: 300
+  early_stop: 20
+  use_cl: False
+  cl_step_size: 2500
+
+  model_args:
+    num_nodes: 358
+    in_steps: 12
+    out_steps: 12
+    steps_per_day: 288
+    input_dim: 3
+    output_dim: 1
+    model_dim: 64
+    feed_forward_dim: 128
+    num_heads: 4
+    num_layers: 3
+    dropout: 0.1
